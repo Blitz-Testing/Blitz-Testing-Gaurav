@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: Blitz-Testing-Gaurav
+    package:
+        name: Blitz-Testing-Gaurav
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Blitz-Testing-Gaurav/tests
+            options:
+                outputdir: robot/Blitz-Testing-Gaurav/results
+
+    robot_testdoc:
+        options:
+            path: robot/Blitz-Testing-Gaurav/tests
+            output: robot/Blitz-Testing-Gaurav/doc/Blitz-Testing-Gaurav_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
